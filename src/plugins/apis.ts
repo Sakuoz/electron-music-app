@@ -6,7 +6,15 @@ export const login = async (phone: string, password: string) => {
     `/login/cellphone?phone=${phone}&password=${password}`
   )
 
+  // 存入本地
   localStorage.account = JSON.stringify(data.profile)
+}
+
+// 喜欢音乐
+export const like = async (id: number, likeStatus = true) => {
+  const data: any = await http.get(`/like?id=${id}&like=${likeStatus}`)
+
+  return data
 }
 
 // 获取用户歌单列表
@@ -19,6 +27,27 @@ export const getUserSongList = async (userId: string) => {
 // 获取每日推荐歌单
 export const getRecommendDailySongList = async () => {
   const data: any = await http.get('/recommend/resource')
+
+  return data
+}
+
+// 获取每日推荐歌曲
+export const getRecommendDailySongs = async () => {
+  const data: any = await http.get('/recommend/songs')
+
+  return data
+}
+
+// 获取专辑详情
+export const getAlbumDetail = async (id: number) => {
+  const data: any = await http.get(`/album?id=${id}`)
+
+  return data
+}
+
+// 获取歌单详情
+export const getSongListDetail = async (id: number) => {
+  const data: any = await http.get(`/playlist/detail?id=${id}`)
 
   return data
 }

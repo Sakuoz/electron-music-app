@@ -59,14 +59,14 @@ i {
 }
 
 a {
-  color: #333;
+  color: #333 !important;
   text-decoration: none;
   transition: all 0.1s linear;
 
   &:hover,
   &:active,
   &:focus {
-    color: #c3463a;
+    color: #c3463a !important;
     text-decoration: none !important;
   }
 }

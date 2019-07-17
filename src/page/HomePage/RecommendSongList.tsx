@@ -71,7 +71,7 @@ export const RecommendSongList = () => {
         }}
       >
         <li>
-          <Link to="/daily_songlist">
+          <Link to="/daily_song">
             <div
               css={{
                 position: 'relative',
@@ -143,7 +143,7 @@ export const RecommendSongList = () => {
         {recommendSongLists.slice(0, 9).map((recommendSongList: any) => {
           return (
             <li key={recommendSongList.id}>
-              <Link to={`/songlist?id=${recommendSongList.id}`}>
+              <Link to={`/song_list/${recommendSongList.id}`}>
                 <div
                   css={{
                     position: 'relative',

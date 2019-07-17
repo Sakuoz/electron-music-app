@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import { getLatestMusic } from '../../plugins/apis'
+import { Link } from 'react-router-dom'
 import { overflowX, mainColor } from '../../plugins/style'
 import { MyIcon } from '../../plugins/myIcon'
 import { PlayIcon } from '../../components/PlayIcon'
+import { Artists } from '../../components/Artists'
 
 export const LatestMusic = () => {
   const [latestMusic, setLatestMusic] = useState([])
@@ -106,28 +108,7 @@ export const LatestMusic = () => {
                       })
                     : null}
                 </p>
-                <div
-                  css={{
-                    fontSize: '12px'
-                  }}
-                >
-                  {music.song.artists.map((artist: any, index: number) => {
-                    return (
-                      <span key={artist.id}>
-                        {artist.name}
-                        {index + 1 === music.song.artists.length ? null : (
-                          <span
-                            css={{
-                              margin: '0 5px'
-                            }}
-                          >
-                            /
-                          </span>
-                        )}
-                      </span>
-                    )
-                  })}
-                </div>
+                <Artists artists={music.song.artists} />
               </div>
 
               <MyIcon

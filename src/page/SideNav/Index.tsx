@@ -84,13 +84,13 @@ export const SideNav = () => {
           navs[2].children.push({
             name: item.name,
             iconName: 'icon-song-list',
-            url: `songlist?id=${item.id}`
+            url: `/song_list/${item.id}`
           })
         } else {
           navs[3].children.push({
             name: item.name,
             iconName: 'icon-song-list',
-            url: `songlist?id=${item.id}`
+            url: `/song_list/${item.id}`
           })
         }
       })
